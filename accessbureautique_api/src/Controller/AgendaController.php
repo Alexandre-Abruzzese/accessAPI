@@ -116,14 +116,37 @@ class AgendaController extends AbstractController
         return new Response("Votre rendez-vous a bien été ajouté.", 200);
     }
 
+    //REMOVE IF FOREST WHEN POSSIBLE
     /**
      * @Route("/api/updateOneRendezVous/{id}", methods="PUT")
      */
     public function updateOneRendezVous(Request $request, $id)
     {
+        $i = 0;
         $em = $this->getDoctrine()->getManager();
         $agenda = $em->getRepository(Agenda::class)->find($id);
-        $agenda->setName($request->query->get('name'));
+        $datas = json_decode($request->getContent(), true);
+
+        if(empty($agenda))
+        {
+            return new JsonResponse(['message' => 'Agenda non trouvé'], Response::HTTP_NOT_FOUND);
+        }
+        if ($datas['name'])
+        {
+            $agenda->setName($datas['name']);
+        }
+        if ($datas['date'])
+        {
+            $agenda->setDescription($datas['description']);
+        }
+        if ($datas['duration'])
+        {
+            $agenda->setName($datas['name']);
+        }
+        if ($datas['description'])
+        {
+            $agenda->setDescription($datas['description']);
+        }
         $em->flush();
 
         return new Response("Votre rendez-vous a bien été mis à jour.", 200);

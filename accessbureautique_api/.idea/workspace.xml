@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19dcccb0-ff07-4737-89f6-68feb25c2d6e" name="Default Changelist" comment="" />
+    <list default="true" id="19dcccb0-ff07-4737-89f6-68feb25c2d6e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AgendaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AgendaController.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable path="composer" />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -83,6 +89,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1fiJaDRzoDJRjxnEHozIihEZIvK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -102,6 +109,9 @@
       <option name="presentableId" value="Default" />
       <updated>1596695040408</updated>
       <workItem from="1596695041467" duration="14972000" />
+      <workItem from="1596725846971" duration="134000" />
+      <workItem from="1596726065213" duration="129000" />
+      <workItem from="1596782881198" duration="3770000" />
     </task>
     <servers />
   </component>
@@ -113,6 +123,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2613" y="454" width="523" height="178" key="ComposerInitDialogKey/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596719611457" />
+    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl" timestamp="1596725979141">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596725979141" />
     <state x="2594" y="259" width="561" height="568" key="NewPhpClassDialog" timestamp="1596695131129">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
