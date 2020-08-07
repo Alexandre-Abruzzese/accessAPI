@@ -46,7 +46,7 @@ class AgendaController extends AbstractController
     }
 
     /**
-     * @Route("/api/getTheThreeLastRendezVous")
+     * @Route("/api/getTheThreeLastRendezVous", methods="GET")
      */
     public function getTheThreeLastRendezVous()
     {
@@ -75,7 +75,7 @@ class AgendaController extends AbstractController
     }
 
     /**
-     * @Route("/api/getOneRendezVous/{id}")
+     * @Route("/api/getOneRendezVous/{id}", methods="GET")
      */
     public function getOneRendezVousByID($id)
     {
