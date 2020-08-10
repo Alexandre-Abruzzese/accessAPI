@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
@@ -116,37 +117,25 @@ class AgendaController extends AbstractController
         return new Response("Votre rendez-vous a bien été ajouté.", 200);
     }
 
-    //REMOVE IF FOREST WHEN POSSIBLE
     /**
      * @Route("/api/updateOneRendezVous/{id}", methods="PUT")
      */
     public function updateOneRendezVous(Request $request, $id)
     {
         $i = 0;
+        $i = 0;
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
         $em = $this->getDoctrine()->getManager();
-        $agenda = $em->getRepository(Agenda::class)->find($id);
-        $datas = json_decode($request->getContent(), true);
+        $datas = $request->getContent();
 
-        if(empty($agenda))
+        if(empty($datas))
         {
-            return new JsonResponse(['message' => 'Agenda non trouvé'], Response::HTTP_NOT_FOUND);
+            return new JsonResponse(['message' => 'Merci de remplir les champs.'], Response::HTTP_NOT_FOUND);
         }
-        if ($datas['name'])
-        {
-            $agenda->setName($datas['name']);
-        }
-        if ($datas['date'])
-        {
-            $agenda->setDescription($datas['description']);
-        }
-        if ($datas['duration'])
-        {
-            $agenda->setName($datas['name']);
-        }
-        if ($datas['description'])
-        {
-            $agenda->setDescription($datas['description']);
-        }
+        $jsonContent = $serializer->deserialize($datas, Agenda::class,'json');
+        $em->persist($jsonContent);
         $em->flush();
 
         return new Response("Votre rendez-vous a bien été mis à jour.", 200);
